@@ -11,6 +11,10 @@ function App() {
     <div className= {styleApp}>
       <Nav/>
       <Cards/>
+      <Routes>
+        <Route path="/favorites" element={<Favorites/>}/> 
+      </Routes>
+      
     </div>
   );
 }
