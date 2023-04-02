@@ -15,9 +15,10 @@ function rootReducer(state = initialState, action) {
           allCharacters: state.allCharacters.filter((character) => character.id !== action.payload)
         }
       case "ADD_CHARACTER":
+        let characters = state.allCharacters.find((character) => character.id == action.payload.id) ? state.allCharacters : [...state.allCharacters, action.payload]
         return {
           ...state,
-          allCharacters: [...state.allCharacters, action.payload]
+          allCharacters: characters
         } 
         
       default:
